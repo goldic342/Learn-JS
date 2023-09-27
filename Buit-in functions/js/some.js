@@ -1,4 +1,4 @@
-console.log("SOME");
+console.log("SOME EVERY");
 const securedData = [
   {
     id: 1,
@@ -35,3 +35,6 @@ if (
 } else {
   console.log("NO SUCH HACKED DATA");
 }
+
+const everySecured = securedData.every((data) => data.status === "secured");
+console.log(everySecured);
