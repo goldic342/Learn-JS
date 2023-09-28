@@ -47,5 +47,5 @@ const fruit2 = {
   name: "orange",
 };
 
-const result = fruit.piece.apply(fruit2, ["Alex", "Youtube"]);
+const result = fruit.piece.apply(fruit2, ["Alex", "Youtube"]); // array
 console.log(result);
