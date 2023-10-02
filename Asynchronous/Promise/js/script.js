@@ -23,4 +23,36 @@ new Promise((resolve, reject) => {
   })
   .finally(() => console.log("Closing connections"));
 
+//show github avatar with fetch
 
+// load data from json
+function loadJsonUser(json_src) {
+  return fetch(json_src).then((response) => response.json());
+}
+
+// gtihub API
+function loadGithubUser(name) {
+  return fetch(`https://api.github.com/users/${name}`).then((response) =>
+    response.json()
+  );
+}
+
+function showAvatar(githubUser) {
+  return new Promise((resolve, reject) => {
+    // creating avatar
+    const avatarImg = document.createElement("img");
+    avatarImg.src = githubUser.avatar_url;
+    avatarImg.className = "promise-avatar-example";
+    document.body.append(avatarImg);
+    // timer, 3 sec and its removed
+    setTimeout(() => {
+      avatarImg.remove();
+      resolve(githubUser); // for then after function
+    }, 3000);
+  });
+}
+
+loadJsonUser("user.json")
+  .then((user) => loadGithubUser(user.name))
+  .then(showAvatar)
+  .then((githubUser) => console.log(`${githubUser.name} done`));
