@@ -3,19 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Node properties</title>
-    
   </head>
   <body>
     <div class="container">
-        <ol class="items-list">
-          <h1 class="ol-title">Top coding languages</h1>
-          <li class="list-item">JavaScript</li>
-          <li class="list-item">Python</li>
-          <li class="list-item">C++</li>
-          <li class="list-item">C#</li>
-        </ul>
+      <section class="user-application">
+        <input
+          type="text"
+          class="user-application__input"
+          id="user-application__input--name"
+        />
+        <input
+          type="email"
+          name="user-email"
+          class="user-application__input"
+          id="user-application__input--email"
+        />
+        <button type="submit">Send application</button>
+      </section>
     </div>
     <script src="script.js"></script>
   </body>
