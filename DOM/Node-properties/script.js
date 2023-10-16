@@ -9,7 +9,7 @@ olTitle.innerHTML += "<div>Hello</div>" // unsecure, upgrade all html tag
 // upper is equal this
 // olTitle.innerHTML = olTitle.innerHTML + "<div>Hello</div>"
 
-console.log(olTitle.textContent) // ALL text in tag and tah childs
+console.log(olTitle.textContent) // ALL text in tag and tag childs
 
 // Creating elemnts
 
