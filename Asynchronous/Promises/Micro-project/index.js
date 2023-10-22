@@ -1,6 +1,7 @@
 const sendButton = document.getElementById("sendButton");
 const inputText = document.getElementById("inputText");
-
+const imgSection = document.querySelector("#image-section");
+let counter = 0;
 function getInputValue() {
   return inputText.value;
 }
@@ -16,19 +17,21 @@ function createAvatar(name) {
     let img = document.createElement("img");
     img.src = name.avatar_url;
     img.className = "promise-avatar-example";
-    document.body.append(img);
+    img.id = `avatar-img-${counter}`;
+    imgSection.append(img);
     setTimeout(() => {
-        img.remove()
-        resolve(name)
-    }, 5000)
+      img.remove();
+      resolve(name);
+    }, 5000);
+    counter++;
   });
 }
 
 function getUserAvatar() {
   const user = getInputValue();
   loadGithub(user)
-  .then((userObject) => createAvatar(userObject))
-  .then(userObject => console.log(userObject))
+    .then((userObject) => createAvatar(userObject))
+    .then((userObject) => console.log(userObject));
 }
 
 sendButton.addEventListener("click", getUserAvatar);
