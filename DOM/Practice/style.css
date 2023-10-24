@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+#user-text-input,
+#user-text-btn {
+  margin-bottom: 20px;
+}
+
+#user-text-btn {
+  padding: 5px 40px;
+}
+
+.text-comment {
+  background-color: lightgray;
+  padding: 3px 7px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
