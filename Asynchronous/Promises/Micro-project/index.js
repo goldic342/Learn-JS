@@ -12,16 +12,16 @@ function loadGithub(userName) {
   );
 }
 
-function createAvatar(name) {
+function createAvatar(userObject) {
   return new Promise(function (resolve, reject) {
     let img = document.createElement("img");
-    img.src = name.avatar_url;
+    img.src = userObject.avatar_url;
     img.className = "promise-avatar-example";
     img.id = `avatar-img-${counter}`;
     imgSection.append(img);
     setTimeout(() => {
       img.remove();
-      resolve(name);
+      resolve(userObject);
     }, 5000);
     counter++;
   });
